@@ -1,12 +1,12 @@
 import pandas as pd
 from sklearn.metrics import classification_report
-import seaborn as sn; sn.set(font_scale=1.4)
+#import seaborn as sn; sn.set(font_scale=1.4)
 from sklearn.utils import shuffle
 import matplotlib.pyplot as plt
 import cv2
 import tensorflow as tf
 from numpy import array
-from tqdm import tqdm
+#from tqdm import tqdm
 
 '''
 TODO:
@@ -74,7 +74,8 @@ def conv_nn(X_test: array, X_valid: array, y_test: tf.Tensor, y_valid: tf.Tensor
         loss='sparse_categorical_crossentropy',
         metrics=['accuracy']
     )
-
+    print(type(X_test))
+    print(type(X_test[0]))
     history  = model.fit(
         X_test, y_test,
         epochs=10,
